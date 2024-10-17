@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "generic/bullseye64"
+  config.vm.box = "debian/bullseye64"
   config.vm.hostname = "alrigu.fjeclot.net"
   config.vm.provider "virtualbox" do |v|
     # v.gui = true
@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
     v.memory = 2048
     v.cpus = 2
     v.customize ['modifyvm', :id, '--clipboard', 'bidirectional'] 
-    config.vm.synced_folder "../codi" "/var/www/html"  
+    config.vm.synced_folder "../codi", "/var/www/html"  
   end
 
   config.vm.network "public_network" #config treballar amb adaptador pont
